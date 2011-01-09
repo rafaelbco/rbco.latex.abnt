@@ -1,0 +1,55 @@
+\newcommand{\includeimg}[2]{
+    \includegraphics[width=#1\textwidth, keepaspectratio]{#2}
+}
+
+% Insere uma figura.
+%
+% Parâmetros:
+% 1. Nome da figura. O label da figura será fig:#1
+% 2. Caminho da imagem.
+% 3. Caption.
+% 4. Fração do comprimento do texto correspondente ao tamanho da imagem.
+%    Exemplos: 0.5, 1, etc. O ``aspect ratio'' é preservado.
+% 5. Fonte. Exemplo: "Adaptado de \cite{Autor:2009}".
+\newcommand{\insfig}[5]{
+    \begin{figure}[\defaultplacement]
+        \begin{center}  
+            \includeimg{#4}{#2}
+        \end{center}
+
+        \ifthenelse{\equal{#5}{}}{
+            \caption{#3}
+        }{
+            \caption[#3]{#3 \newline FONTE: #5}
+        }
+
+        \label{fig:#1}
+    \end{figure}
+}
+
+% Comando de conveniência para \insfig que assume que o caminho da imagem
+% é ``imagens/#1.png''.
+% 
+% Parâmetros:
+% 1. Nome da figura. O label da figura será fig:#1, o caminho da imagem será
+%    ``imagens/#1.png''.
+% 2. Caption.
+% 3. Fração do comprimento do texto correspondente ao tamanho da imagem.
+%    Exemplos: 0.5, 1, etc. O ``aspect ratio'' é preservado.
+% 4. Fonte. Exemplo: "Adaptado de  \cite{Autor:2009}".
+\newcommand{\insfigdefault}[4]{
+    \insfig{#1}{imagens/#1.png}{#2}{#3}{#4}
+}
+
+% Comando de conveniência para \insfig que insere uma imagem ``dummy''. Útil
+% para inserir ``place holders''. Quando a imagem ``real'' estiver pronta
+% basta substituir por \insfigdefault e acrescentar o tamanho da imagem.
+% 
+% Parâmetros:
+% 1. Nome da figura. O label da figura será fig:#1.
+% 2. Caption.
+\newcommand{\insfigsample}[2]{
+    \insfig{#1}{imagens/sample.png}{#2}{0.5}
+}
+
+\newcommand{\defaultplacement}{tbhs}

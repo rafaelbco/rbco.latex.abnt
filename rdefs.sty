@@ -1,0 +1,18 @@
+% Lista de definições. 
+%
+% Exemplo:
+% \begin{definitions}
+%     \item[Termo 1] Significado 1.
+%     \item[Termo 2] Significado 2.
+%         \subitem[Sub-termo] Significado do sub-termo.
+% \end{definitions}
+\newenvironment{definitions}{
+        \let \olditem \item
+        \def \item [##1]##2 {\olditem \textit{##1}. ##2}
+
+        \let \oldsubitem \subitem
+        \def \subitem [##1]##2 {\oldsubitem \textit{##1}. ##2}
+        \begin{itemize}        
+    }{   
+        \end{itemize}
+    }

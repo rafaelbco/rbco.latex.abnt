@@ -1,0 +1,27 @@
+% Citação em língua estrangeira.
+% 
+% Parâmetros:
+% 1. Texto da citação traduzido.
+% 2. Texto da citação na língua original.
+% 3. Fonte.
+%
+% Exemplo:
+% \citacaole{Esse livro.}{This book.}{\cite{John:2003}}
+\newcommand{\citacaole}[3]{
+    \begin{citacao}
+        #1\footnote{Tradução livre de: \textit{#2}}#3
+    \end{citacao}
+}
+
+% Citação em língua estrangeira, versão ``online''.
+% 
+% Parâmetros:
+% 1. Texto da citação traduzido.
+% 2. Texto da citação na língua original.
+% 3. Fonte.
+%
+% Exemplo:
+% \citacaoleonline{Esse livro.}{This book.}{\cite{John:2003}}
+\newcommand{\citacaoleonline}[3]{
+    ``#1''\footnote{Tradução livre de: \textit{#2}}#3
+}

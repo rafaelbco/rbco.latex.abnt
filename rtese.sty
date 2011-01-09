@@ -1,0 +1,81 @@
+% Comandos e ambientes
+% ------------------------------------------------------------------------------
+
+\newtheorem*{researchproblemenv}{Problema de pesquisa}
+\newtheorem*{researchquestionenv}{Pergunta de pesquisa}
+\newtheorem*{hypothesisevn}{Hipótese}
+\newtheorem*{maingoalenv}{Objetivo geral}
+\newtheorem{specificgoalevn}{Objetivo específico}
+
+\newcommand{\researchproblem}[1]{
+    \newcommand{\researchproblemtext}{#1}
+    \begin{researchproblemenv}
+        #1
+    \end{researchproblemenv}
+}
+
+\newcommand{\researchquestion}[1]{
+    \newcommand{\researchquestiontext}{#1}
+    \begin{researchquestionenv}
+        #1
+    \end{researchquestionenv}
+}
+
+\newcommand{\hypothesis}[1]{
+    \newcommand{\hypothesistext}{#1}
+    \begin{hypothesisevn}
+        #1
+    \end{hypothesisevn}
+}
+
+\newcommand{\maingoal}[1]{
+    \newcommand{\maingoaltext}{#1}
+    \begin{maingoalenv}
+        #1
+    \end{maingoalenv}
+}
+
+\newcommand{\specificgoalone}[1]{
+    \newcommand{\specificgoalonetext}{#1}
+    \begin{specificgoalevn}
+        #1
+    \end{specificgoalevn}
+}
+
+\newcommand{\specificgoaltwo}[1]{
+    \newcommand{\specificgoaltwotext}{#1}
+    \begin{specificgoalevn}
+        #1
+    \end{specificgoalevn}
+}
+
+\newcommand{\specificgoalthree}[1]{
+    \newcommand{\specificgoalthreetext}{#1}
+    \begin{specificgoalevn}
+        #1
+    \end{specificgoalevn}
+}
+
+% Admonitions, inspirado no docutils. Insere um texto em destaque.
+%
+% Parâmetros:
+% 1. Título. Algo como: Importante, Erro, Dica, etc.
+% 2. Texto.
+\newcommand{\admonition}[2]{
+    % Esse comando está customizado para ``to-do''. Para ficar mais parecido
+    % com o docutils teria que desenhar uma caixa de texto em destaque.
+    \textbf{\Large{$\ll$}}\textbf{#1}: #2\textbf{\Large{$\gg$}}
+}
+
+% Admonition ``To-do''.
+% Parâmetros:
+% 1. Texto.
+\newcommand{\todo}[1]{\admonition{TO-DO}{#1}}
+
+% Admonition ``XXX''.
+% Parâmetros:
+% 1. Texto.
+\newcommand{\xxx}[1]{\admonition{XXX}{#1}}
+
+
+
