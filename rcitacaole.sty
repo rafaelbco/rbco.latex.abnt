@@ -9,7 +9,7 @@
 % \citacaole{Esse livro.}{This book.}{\cite{John:2003}}
 \newcommand{\citacaole}[3]{
     \begin{citacao}
-        #1\footnote{Tradução livre de: \textit{#2}}#3
+        \trim@spaces{#1}\footnote{Tradução livre de: \textit{\trim@spaces{#2}}}#3
     \end{citacao}
 }
 
@@ -23,5 +23,5 @@
 % Exemplo:
 % \citacaoleonline{Esse livro.}{This book.}{\cite{John:2003}}
 \newcommand{\citacaoleonline}[3]{
-    ``#1''\footnote{Tradução livre de: \textit{#2}}#3
+    ``\trim@spaces{#1}''\footnote{Tradução livre de: \textit{\trim@spaces{#2}}}#3
 }
