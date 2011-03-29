@@ -1,0 +1,10 @@
+% Ao incluir esse pacote o ambiente itemize é alterado para não colocar espaços entre os itens
+% da lista. O pacote enumitem é usado para isso.
+
+\usepackage{enumitem}
+
+\let \olditemize \itemize
+
+\def\itemize{
+    \olditemize[noitemsep]
+}
